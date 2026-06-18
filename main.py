@@ -130,3 +130,40 @@ cluster_data["age"] = cluster_data["age"].fillna(
 
 st.write("Missing Values After Filling")
 st.write(cluster_data.isnull().sum())
+
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+scaled_data = scaler.fit_transform(cluster_data)
+
+st.subheader("Scaled Data")
+
+st.write("Scaled Data Shape:", scaled_data.shape)
+
+from sklearn.cluster import KMeans
+
+wcss = []
+
+for i in range(1, 11):
+    kmeans = KMeans(
+        n_clusters=i,
+        random_state=42,
+        n_init=10
+    )
+
+    kmeans.fit(scaled_data)
+    wcss.append(kmeans.inertia_)
+
+st.subheader("Elbow Method")
+
+fig, ax = plt.subplots()
+
+ax.plot(range(1, 11), wcss, marker="o")
+
+ax.set_xlabel("Number of Clusters")
+ax.set_ylabel("WCSS")
+ax.set_title("Elbow Method")
+
+st.pyplot(fig)
