@@ -93,3 +93,14 @@ st.dataframe(data.head())
 
 st.write("Property Columns")
 st.write(properties.columns)
+
+
+st.subheader("Sale Price Conversion")
+
+data["sale_price"] = (
+    data["sale_price"]
+    .replace(r"[$,]", "", regex=True)
+    .astype(float)
+)
+
+st.write(data["sale_price"].head())
