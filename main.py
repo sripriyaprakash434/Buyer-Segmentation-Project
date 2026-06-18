@@ -247,3 +247,10 @@ ax.set_title("Buyer Segmentation")
 st.pyplot(fig)
 
 st.pyplot(fig)
+
+st.download_button(
+    label="Download Buyer Segments CSV",
+    data=data.to_csv(index=False),
+    file_name="buyer_segments.csv",
+    mime="text/csv"
+)
