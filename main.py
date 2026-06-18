@@ -204,7 +204,6 @@ for i in range(1, 11):
         random_state=42,
         n_init=10
     )
-
     kmeans.fit(scaled_data)
     wcss.append(kmeans.inertia_)
 
@@ -226,19 +225,16 @@ kmeans = KMeans(
     n_init=10
 )
 
-clusters = kmeans.fit_predict(scaled_data)
-
-data["cluster"] = clusters
+data["cluster"] = kmeans.fit_predict(scaled_data)
 
 st.subheader("Cluster Counts")
-
 st.write(data["cluster"].value_counts())
 
 st.subheader("Buyer Segmentation")
 
 fig, ax = plt.subplots(figsize=(8, 6))
 
-scatter = ax.scatter(
+ax.scatter(
     data["age"],
     data["sale_price"],
     c=data["cluster"]
@@ -247,5 +243,7 @@ scatter = ax.scatter(
 ax.set_xlabel("Age")
 ax.set_ylabel("Sale Price")
 ax.set_title("Buyer Segmentation")
+
+st.pyplot(fig)
 
 st.pyplot(fig)
