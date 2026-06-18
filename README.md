@@ -91,5 +91,8 @@ Successfully segmented 7305 property buyers into 4 distinct groups using K-Means
 
 ### Capture
 ![Capture](./Capture.PNG)
+
+### Buyer Segment 2
+![Buyer Segment 2](./Buyer%20segment%202.PNG)
 ## Author
 Sripriya Prakash
