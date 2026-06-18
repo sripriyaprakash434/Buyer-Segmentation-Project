@@ -219,3 +219,33 @@ ax.set_xlabel("Number of Clusters")
 ax.set_ylabel("WCSS")
 
 st.pyplot(fig)
+
+kmeans = KMeans(
+    n_clusters=4,
+    random_state=42,
+    n_init=10
+)
+
+clusters = kmeans.fit_predict(scaled_data)
+
+data["cluster"] = clusters
+
+st.subheader("Cluster Counts")
+
+st.write(data["cluster"].value_counts())
+
+st.subheader("Buyer Segmentation")
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+scatter = ax.scatter(
+    data["age"],
+    data["sale_price"],
+    c=data["cluster"]
+)
+
+ax.set_xlabel("Age")
+ax.set_ylabel("Sale Price")
+ax.set_title("Buyer Segmentation")
+
+st.pyplot(fig)
