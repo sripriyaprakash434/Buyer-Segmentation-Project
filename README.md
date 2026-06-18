@@ -50,6 +50,16 @@ This project performs customer segmentation using K-Means Clustering on real est
 ### Country Distribution
 ![Country Distribution](country%20graph.PNG)
 
+## Visualizations
+
+### Elbow Method
+![Elbow Method](Elbow method graph.PNG)
+
+### Country Distribution
+![Country Graph](country graph.PNG)
+
+### Buyer Segments
+![Buyer Segments](buyer segmenent.PNG)
 ## Results
 Successfully segmented 7305 property buyers into 4 distinct groups using K-Means clustering.
 
