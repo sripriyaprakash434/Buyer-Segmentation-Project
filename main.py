@@ -11,3 +11,13 @@ st.dataframe(clients.head())
 
 st.subheader("Properties Dataset")
 st.dataframe(properties.head())
+
+
+import matplotlib.pyplot as plt
+
+st.subheader("Client Type Distribution")
+
+fig, ax = plt.subplots()
+clients["client_type"].value_counts().plot(kind="bar", ax=ax)
+
+st.pyplot(fig)
