@@ -193,3 +193,29 @@ ax.set_xlabel("Number of Clusters")
 ax.set_ylabel("WCSS")
 
 st.pyplot(fig)
+
+from sklearn.cluster import KMeans
+
+wcss = []
+
+for i in range(1, 11):
+    kmeans = KMeans(
+        n_clusters=i,
+        random_state=42,
+        n_init=10
+    )
+
+    kmeans.fit(scaled_data)
+    wcss.append(kmeans.inertia_)
+
+st.subheader("Elbow Method")
+
+fig, ax = plt.subplots()
+
+ax.plot(range(1, 11), wcss, marker="o")
+
+ax.set_title("Elbow Method")
+ax.set_xlabel("Number of Clusters")
+ax.set_ylabel("WCSS")
+
+st.pyplot(fig)
