@@ -26,7 +26,15 @@ st.subheader("Loan Applied Distribution")
 
 fig, ax = plt.subplots()
 
-clients["loan_applied"].value_counts().plot()
+clients["loan_applied"].value_counts().plot(
+    kind="pie",
+    autopct="%1.1f%%",
+    ax=ax
+)
+
+ax.set_ylabel("")
+
+st.pyplot(fig)
 
 st.subheader("Country Distribution")
 
@@ -39,15 +47,5 @@ clients["country"].value_counts().plot(
 
 ax.set_xlabel("Country")
 ax.set_ylabel("Number of Clients")
-
-st.pyplot(fig)
-
-    
-    kind="pie",
-    autopct="%1.1f%%",
-    ax=ax
-)
-
-ax.set_ylabel("")
 
 st.pyplot(fig)
