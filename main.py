@@ -190,6 +190,22 @@ ax.set_title("Buyer Segments")
 
 st.pyplot(fig)
 
+st.subheader("Buyer Segmentation")
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.scatter(
+    data["age"],
+    data["sale_price"],
+    c=data["cluster"]
+)
+
+ax.set_xlabel("Age")
+ax.set_ylabel("Sale Price")
+ax.set_title("Buyer Segmentation")
+
+st.pyplot(fig)
+
 st.subheader("Project Presentation")
 
 with open(
