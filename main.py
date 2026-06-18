@@ -49,3 +49,15 @@ ax.set_xlabel("Country")
 ax.set_ylabel("Number of Clients")
 
 st.pyplot(fig)
+
+
+st.subheader("Clients Dataset Information")
+
+st.write("Clients Shape:", clients.shape)
+st.write("Properties Shape:", properties.shape)
+
+st.write("Client Columns")
+st.write(clients.columns)
+
+st.write("Property Columns")
+st.write(properties.columns)
