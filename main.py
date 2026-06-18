@@ -254,3 +254,19 @@ st.download_button(
     file_name="buyer_segments.csv",
     mime="text/csv"
 )
+
+
+st.subheader("Project Presentation")
+
+with open(
+    "Data_ Analyst_ Buyer Segmentation Project Using K-Means Clustering.pdf",
+    "rb"
+) as pdf_file:
+    PDFbyte = pdf_file.read()
+
+st.download_button(
+    label="📄 Download Project Presentation",
+    data=PDFbyte,
+    file_name="Buyer_Segmentation_Presentation.pdf",
+    mime="application/pdf"
+)
