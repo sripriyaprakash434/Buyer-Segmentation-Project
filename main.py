@@ -104,3 +104,29 @@ data["sale_price"] = (
 )
 
 st.write(data["sale_price"].head())
+
+
+st.subheader("Data Types")
+
+st.write(data.dtypes)
+
+st.subheader("Clustering Dataset")
+
+cluster_data = data[[
+    "age",
+    "sale_price",
+    "floor_area_sqft",
+    "satisfaction_score"
+]]
+
+st.dataframe(cluster_data.head())
+
+st.write("Missing Values")
+st.write(cluster_data.isnull().sum())
+
+cluster_data["age"] = cluster_data["age"].fillna(
+    cluster_data["age"].median()
+)
+
+st.write("Missing Values After Filling")
+st.write(cluster_data.isnull().sum())
