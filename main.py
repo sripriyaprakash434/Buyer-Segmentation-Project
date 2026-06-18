@@ -175,34 +175,6 @@ kmeans = KMeans(
 
 data["cluster"] = kmeans.fit_predict(scaled_data)
 
-st.subheader("Cluster Counts")
-st.write(data["cluster"].value_counts())
-
-st.subheader("Buyer Segmentation")
-
-fig, ax = plt.subplots(figsize=(8, 6))
-
-ax.scatter(
-    data["age"],
-    data["sale_price"],
-    c=data["cluster"]
-)
-
-ax.set_xlabel("Age")
-ax.set_ylabel("Sale Price")
-ax.set_title("Buyer Segmentation")
-
-st.pyplot(fig)
-
-st.pyplot(fig)
-
-st.download_button(
-    label="Download Buyer Segments CSV",
-    data=data.to_csv(index=False),
-    file_name="buyer_segments.csv",
-    mime="text/csv"
-)
-
 
 st.subheader("Project Presentation")
 
