@@ -56,6 +56,24 @@ st.subheader("Clients Dataset Information")
 st.write("Clients Shape:", clients.shape)
 st.write("Properties Shape:", properties.shape)
 
+from datetime import datetime
+
+clients["date_of_birth"] = pd.to_datetime(
+    clients["date_of_birth"],
+    errors="coerce"
+)
+
+clients["age"] = (
+    datetime.now().year
+    - clients["date_of_birth"].dt.year
+)
+
+st.subheader("Age Calculation")
+
+st.dataframe(
+    clients[["date_of_birth", "age"]].head()
+)
+
 st.write("Client Columns")
 st.write(clients.columns)
 
