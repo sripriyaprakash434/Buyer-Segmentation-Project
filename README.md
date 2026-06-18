@@ -63,5 +63,13 @@ This project performs customer segmentation using K-Means Clustering on real est
 ## Results
 Successfully segmented 7305 property buyers into 4 distinct groups using K-Means clustering.
 
+### Pie Chart
+![Pie Chart](pie chat.PNG)
+
+### Buyer Segment 2
+![Buyer Segment 2](Buyer segment 2.PNG)
+
+### Capture
+![Capture](Capture.PNG)
 ## Author
 Sripriya Prakash
