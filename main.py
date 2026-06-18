@@ -174,7 +174,21 @@ kmeans = KMeans(
 )
 
 data["cluster"] = kmeans.fit_predict(scaled_data)
+st.subheader("Buyer Segments")
 
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.scatter(
+    data["sale_price"],
+    data["floor_area_sqft"],
+    c=data["cluster"]
+)
+
+ax.set_xlabel("Sale Price")
+ax.set_ylabel("Floor Area (sqft)")
+ax.set_title("Buyer Segments")
+
+st.pyplot(fig)
 
 st.subheader("Project Presentation")
 
