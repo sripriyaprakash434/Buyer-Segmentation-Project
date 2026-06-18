@@ -77,5 +77,19 @@ st.dataframe(
 st.write("Client Columns")
 st.write(clients.columns)
 
+st.subheader("Merged Dataset")
+
+data = pd.merge(
+    clients,
+    properties,
+    left_on="client_id",
+    right_on="client_ref",
+    how="inner"
+)
+
+st.write("Merged Dataset Shape:", data.shape)
+
+st.dataframe(data.head())
+
 st.write("Property Columns")
 st.write(properties.columns)
