@@ -71,5 +71,25 @@ Successfully segmented 7305 property buyers into 4 distinct groups using K-Means
 
 ### Capture
 ![Capture](Capture.PNG)
+
+## Visualizations
+
+### Elbow Method
+![Elbow Method](./Elbow%20method%20graph.PNG)
+
+### Country Distribution
+![Country Distribution](./country%20graph.PNG)
+
+### Buyer Segments
+![Buyer Segments](./buyer%20segmenent.PNG)
+
+### Pie Chart
+![Pie Chart](./pie%20chat.PNG)
+
+### Buyer Segment 2
+![Buyer Segment 2](./Buyer%20segment%202.PNG)
+
+### Capture
+![Capture](./Capture.PNG)
 ## Author
 Sripriya Prakash
